@@ -9,23 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Style général du corps de la page */
     body { 
-      font-family: 'Lato', sans-serif; /* Nouvelle police */
+      font-family: 'Lato', sans-serif; 
       line-height: 1.6; 
       margin: 0;
-      background-color: #f4f4f9; /* Fond légèrement gris */
-      color: #333; /* Texte plus doux que le noir pur */
+      background-color: #f4f4f9;
+      color: #333;
     }
 
-    /* Conteneur principal pour centrer le contenu */
     .conteneur {
       max-width: 900px;
-      margin: 40px auto; /* Centre la page */
+      margin: 40px auto;
       padding: 20px;
     }
 
-    /* Style des titres */
     h1, h2, h3 { 
       color: #2c3e50; 
     }
@@ -37,24 +34,25 @@
       margin: 40px 0;
     }
 
-    /* Style pour chaque projet (effet "carte") */
     .projet { 
-      background-color: #ffffff; /* Fond blanc pour les projets */
+      background-color: #ffffff;
       border: 1px solid #ddd;
-      border-left: 5px solid #3498db; /* Couleur d'accentuation bleue */
       padding: 20px; 
       margin-bottom: 25px;
-      border-radius: 5px; /* Coins arrondis */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre légère */
-      transition: transform 0.2s; /* Animation au survol */
+      border-radius: 8px; /* Coins plus arrondis */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden; /* Important pour les images */
     }
     
-    .projet:hover {
-        transform: translateY(-5px); /* Effet de soulèvement au survol */
+    .projet img {
+      width: 100%; /* L'image prend toute la largeur */
+      border-radius: 5px;
+      margin-bottom: 15px;
     }
 
     .projet h3 {
         margin-top: 0;
+        color: #3498db; /* Titre du projet en couleur */
     }
 
   </style>
@@ -70,33 +68,24 @@
     <h2>3ème Année</h2>
 
     <div class="projet">
+      <img src="https://placehold.co/800x400/3498db/ffffff?text=Fiabilit%C3%A9+Syst%C3%A8mes" alt="Image du projet Fiabilité des Systèmes">
       <h3>Projet de Fin d'Études : Analyse de Fiabilité des Systèmes</h3>
-      <p>
-        <strong>Description :</strong> Contribution à un outil logiciel d'analyse de fiabilité basé sur les diagrammes de Hasse pour l'étendre aux systèmes multi-états (au-delà du binaire panne/marche).
-      </p>
-      <p>
-        <strong>Compétences :</strong> Sûreté de fonctionnement, Analyse de fiabilité, Diagrammes de Hasse.
-      </p>
+      <p><strong>Description :</strong> Contribution à un outil logiciel d'analyse de fiabilité basé sur les diagrammes de Hasse pour l'étendre aux systèmes multi-états.</p>
+      <p><strong>Compétences :</strong> Sûreté de fonctionnement, Analyse de fiabilité, Diagrammes de Hasse.</p>
     </div>
 
     <div class="projet">
+      <img src="https://placehold.co/800x400/2ecc71/ffffff?text=Commande+Avion" alt="Image du projet Commande Avion">
       <h3>Commande Automatique pour l'Atterrissage d'un Avion</h3>
-      <p>
-        <strong>Description :</strong> Conception d'une loi de commande robuste pour l'atterrissage automatique d'un A320. Linéarisation du modèle, création d'un observateur d'état et réglage d'un contrôleur PID sous Matlab/Simulink.
-      </p>
-      <p>
-        <strong>Compétences :</strong> Automatique avancée, Commande de systèmes non-linéaires, Matlab, Simulink.
-      </p>
+      <p><strong>Description :</strong> Conception d'une loi de commande robuste pour l'atterrissage automatique d'un A320 sous Matlab/Simulink.</p>
+      <p><strong>Compétences :</strong> Automatique avancée, Commande de systèmes non-linéaires, Matlab, Simulink.</p>
     </div>
     
     <div class="projet">
+      <img src="https://placehold.co/800x400/e74c3c/ffffff?text=Multi-Agents" alt="Image du projet Multi-Agents">
       <h3>Pilotage de Systèmes Multi-Agents et Consensus</h3>
-      <p>
-        <strong>Description :</strong> Simulation et étude de la convergence d'un groupe d'agents autonomes via des algorithmes de consensus en temps continu et discret, basés sur la théorie des graphes.
-      </p>
-      <p>
-        <strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Théorie du contrôle, Matlab.
-      </p>
+      <p><strong>Description :</strong> Simulation et étude de la convergence d'un groupe d'agents autonomes via des algorithmes de consensus basés sur la théorie des graphes.</p>
+      <p><strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Théorie du contrôle, Matlab.</p>
     </div>
 
     <hr>
@@ -104,23 +93,17 @@
     <h2>2ème Année</h2>
 
     <div class="projet">
+      <img src="https://placehold.co/800x400/f1c40f/ffffff?text=Projet+Twizzy" alt="Image du projet Twizzy">
       <h3>Détection de Panneaux Routiers (Projet Twizzy)</h3>
-      <p>
-        <strong>Description :</strong> Réalisation d'une application de traitement d'images pour la détection et la reconnaissance en temps réel de panneaux de signalisation.
-      </p>
-      <p>
-        <strong>Compétences :</strong> Traitement d'images, OpenCV, Python, Interface graphique.
-      </p>
+      <p><strong>Description :</strong> Réalisation d'une application de traitement d'images pour la détection et la reconnaissance en temps réel de panneaux de signalisation.</p>
+      <p><strong>Compétences :</strong> Traitement d'images, OpenCV, Python.</p>
     </div>
     
     <div class="projet">
+      <img src="https://placehold.co/800x400/9b59b6/ffffff?text=Trafic+Routier+C" alt="Image du projet Trafic Routier">
       <h3>Simulateur de Trafic Routier en C</h3>
-      <p>
-        <strong>Description :</strong> Développement d'un simulateur de trafic en C, avec une version concurrente utilisant le multithreading pour gérer les véhicules et les feux de manière synchronisée.
-      </p>
-      <p>
-        <strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading), Synchronisation (mutex).
-      </p>
+      <p><strong>Description :</strong> Développement d'un simulateur de trafic en C, avec une version concurrente utilisant le multithreading pour gérer véhicules et feux.</p>
+      <p><strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading), Mutex.</p>
     </div>
 
     <hr>
@@ -128,23 +111,17 @@
     <h2>1ère Année</h2>
 
     <div class="projet">
+      <img src="https://placehold.co/800x400/1abc9c/ffffff?text=Algo+Dijkstra" alt="Image du projet Dijkstra">
       <h3>Calcul d'Itinéraire de Bus avec l'Algorithme de Dijkstra</h3>
-      <p>
-        <strong>Description :</strong> Développement d'une application en Java pour trouver l'itinéraire le plus rapide dans un réseau de bus en utilisant un graphe et l'algorithme de Dijkstra.
-      </p>
-      <p>
-        <strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données.
-      </p>
+      <p><strong>Description :</strong> Développement d'une application en Java pour trouver l'itinéraire le plus rapide dans un réseau de bus en utilisant un graphe et l'algorithme de Dijkstra.</p>
+      <p><strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données.</p>
     </div>
 
     <div class="projet">
+      <img src="https://placehold.co/800x400/e67e22/ffffff?text=Base+de+Donn%C3%A9es" alt="Image du projet Base de Données">
       <h3>Modélisation et Interrogation d'une Base de Données</h3>
-      <p>
-        <strong>Description :</strong> Création et gestion d'une base de données d'employés, de la modélisation UML à l'écriture de nombreuses requêtes en SQL.
-      </p>
-      <p>
-        <strong>Compétences :</strong> SQL, Modélisation de données (UML), MySQL Workbench.
-      </p>
+      <p><strong>Description :</strong> Création et gestion d'une base de données d'employés, de la modélisation UML à l'écriture de requêtes en SQL.</p>
+      <p><strong>Compétences :</strong> SQL, Modélisation de données (UML), MySQL Workbench.</p>
     </div>
   </div>
 
