@@ -3,98 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <title>Portfolio de Elyazid Kerrazi</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: sans-serif; line-height: 1.6; margin: 20px 40px; }
-    h1, h2, h3 { color: #333; }
-    hr { margin: 30px 0; }
-    .projet { border-left: 4px solid #0366d6; padding-left: 15px; margin-bottom: 30px; }
+    /* Style général du corps de la page */
+    body { 
+      font-family: 'Lato', sans-serif; /* Nouvelle police */
+      line-height: 1.6; 
+      margin: 0;
+      background-color: #f4f4f9; /* Fond légèrement gris */
+      color: #333; /* Texte plus doux que le noir pur */
+    }
+
+    /* Conteneur principal pour centrer le contenu */
+    .conteneur {
+      max-width: 900px;
+      margin: 40px auto; /* Centre la page */
+      padding: 20px;
+    }
+
+    /* Style des titres */
+    h1, h2, h3 { 
+      color: #2c3e50; 
+    }
+
+    hr { 
+      border: 0;
+      height: 1px;
+      background: #ddd;
+      margin: 40px 0;
+    }
+
+    /* Style pour chaque projet (effet "carte") */
+    .projet { 
+      background-color: #ffffff; /* Fond blanc pour les projets */
+      border: 1px solid #ddd;
+      border-left: 5px solid #3498db; /* Couleur d'accentuation bleue */
+      padding: 20px; 
+      margin-bottom: 25px;
+      border-radius: 5px; /* Coins arrondis */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre légère */
+      transition: transform 0.2s; /* Animation au survol */
+    }
+    
+    .projet:hover {
+        transform: translateY(-5px); /* Effet de soulèvement au survol */
+    }
+
+    .projet h3 {
+        margin-top: 0;
+    }
+
   </style>
 </head>
 <body>
 
-  <h1>Mes Projets Académiques</h1>
-  <p>Bienvenue sur mon portfolio. Voici une sélection de projets réalisés durant mon cycle d'ingénieur à l'ENSEM, en filière Systèmes Numériques (Systèmes Autonomes & IA).</p>
+  <div class="conteneur">
+    <h1>Mes Projets Académiques</h1>
+    <p>Bienvenue sur mon portfolio. Voici une sélection de projets réalisés durant mon cycle d'ingénieur à l'ENSEM, en filière Systèmes Numériques (Systèmes Autonomes & IA).</p>
 
-  <hr>
-  
-  <h2>3ème Année</h2>
+    <hr>
+    
+    <h2>3ème Année</h2>
 
-  <div class="projet">
-    <h3>Projet de Fin d'Études : Analyse de Fiabilité des Systèmes</h3>
-    <p>
-      <strong>Description :</strong> Contribution à un outil logiciel d'analyse de fiabilité basé sur les diagrammes de Hasse pour l'étendre aux systèmes multi-états (au-delà du binaire panne/marche).
-    </p>
-    <p>
-      <strong>Compétences :</strong> Sûreté de fonctionnement, Analyse de fiabilité, Diagrammes de Hasse.
-    </p>
-  </div>
+    <div class="projet">
+      <h3>Projet de Fin d'Études : Analyse de Fiabilité des Systèmes</h3>
+      <p>
+        <strong>Description :</strong> Contribution à un outil logiciel d'analyse de fiabilité basé sur les diagrammes de Hasse pour l'étendre aux systèmes multi-états (au-delà du binaire panne/marche).
+      </p>
+      <p>
+        <strong>Compétences :</strong> Sûreté de fonctionnement, Analyse de fiabilité, Diagrammes de Hasse.
+      </p>
+    </div>
 
-  <div class="projet">
-    <h3>Commande Automatique pour l'Atterrissage d'un Avion</h3>
-    <p>
-      <strong>Description :</strong> Conception d'une loi de commande robuste pour l'atterrissage automatique d'un A320. Linéarisation du modèle, création d'un observateur d'état et réglage d'un contrôleur PID sous Matlab/Simulink.
-    </p>
-    <p>
-      <strong>Compétences :</strong> Automatique avancée, Commande de systèmes non-linéaires, Matlab, Simulink.
-    </p>
-  </div>
-  
-  <div class="projet">
-    <h3>Pilotage de Systèmes Multi-Agents et Consensus</h3>
-    <p>
-      <strong>Description :</strong> Simulation et étude de la convergence d'un groupe d'agents autonomes via des algorithmes de consensus en temps continu et discret, basés sur la théorie des graphes.
-    </p>
-    <p>
-      <strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Théorie du contrôle, Matlab.
-    </p>
-  </div>
+    <div class="projet">
+      <h3>Commande Automatique pour l'Atterrissage d'un Avion</h3>
+      <p>
+        <strong>Description :</strong> Conception d'une loi de commande robuste pour l'atterrissage automatique d'un A320. Linéarisation du modèle, création d'un observateur d'état et réglage d'un contrôleur PID sous Matlab/Simulink.
+      </p>
+      <p>
+        <strong>Compétences :</strong> Automatique avancée, Commande de systèmes non-linéaires, Matlab, Simulink.
+      </p>
+    </div>
+    
+    <div class="projet">
+      <h3>Pilotage de Systèmes Multi-Agents et Consensus</h3>
+      <p>
+        <strong>Description :</strong> Simulation et étude de la convergence d'un groupe d'agents autonomes via des algorithmes de consensus en temps continu et discret, basés sur la théorie des graphes.
+      </p>
+      <p>
+        <strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Théorie du contrôle, Matlab.
+      </p>
+    </div>
 
-  <hr>
-  
-  <h2>2ème Année</h2>
+    <hr>
+    
+    <h2>2ème Année</h2>
 
-  <div class="projet">
-    <h3>Détection de Panneaux Routiers (Projet Twizzy)</h3>
-    <p>
-      <strong>Description :</strong> Réalisation d'une application de traitement d'images pour la détection et la reconnaissance en temps réel de panneaux de signalisation.
-    </p>
-    <p>
-      <strong>Compétences :</strong> Traitement d'images, OpenCV, Python, Interface graphique.
-    </p>
-  </div>
-  
-  <div class="projet">
-    <h3>Simulateur de Trafic Routier en C</h3>
-    <p>
-      <strong>Description :</strong> Développement d'un simulateur de trafic en C, avec une version concurrente utilisant le multithreading pour gérer les véhicules et les feux de manière synchronisée.
-    </p>
-    <p>
-      <strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading), Synchronisation (mutex).
-    </p>
-  </div>
+    <div class="projet">
+      <h3>Détection de Panneaux Routiers (Projet Twizzy)</h3>
+      <p>
+        <strong>Description :</strong> Réalisation d'une application de traitement d'images pour la détection et la reconnaissance en temps réel de panneaux de signalisation.
+      </p>
+      <p>
+        <strong>Compétences :</strong> Traitement d'images, OpenCV, Python, Interface graphique.
+      </p>
+    </div>
+    
+    <div class="projet">
+      <h3>Simulateur de Trafic Routier en C</h3>
+      <p>
+        <strong>Description :</strong> Développement d'un simulateur de trafic en C, avec une version concurrente utilisant le multithreading pour gérer les véhicules et les feux de manière synchronisée.
+      </p>
+      <p>
+        <strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading), Synchronisation (mutex).
+      </p>
+    </div>
 
-  <hr>
+    <hr>
 
-  <h2>1ère Année</h2>
+    <h2>1ère Année</h2>
 
-  <div class="projet">
-    <h3>Calcul d'Itinéraire de Bus avec l'Algorithme de Dijkstra</h3>
-    <p>
-      <strong>Description :</strong> Développement d'une application en Java pour trouver l'itinéraire le plus rapide dans un réseau de bus en utilisant un graphe et l'algorithme de Dijkstra.
-    </p>
-    <p>
-      <strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données.
-    </p>
-  </div>
+    <div class="projet">
+      <h3>Calcul d'Itinéraire de Bus avec l'Algorithme de Dijkstra</h3>
+      <p>
+        <strong>Description :</strong> Développement d'une application en Java pour trouver l'itinéraire le plus rapide dans un réseau de bus en utilisant un graphe et l'algorithme de Dijkstra.
+      </p>
+      <p>
+        <strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données.
+      </p>
+    </div>
 
-  <div class="projet">
-    <h3>Modélisation et Interrogation d'une Base de Données</h3>
-    <p>
-      <strong>Description :</strong> Création et gestion d'une base de données d'employés, de la modélisation UML à l'écriture de nombreuses requêtes en SQL.
-    </p>
-    <p>
-      <strong>Compétences :</strong> SQL, Modélisation de données (UML), MySQL Workbench.
-    </p>
+    <div class="projet">
+      <h3>Modélisation et Interrogation d'une Base de Données</h3>
+      <p>
+        <strong>Description :</strong> Création et gestion d'une base de données d'employés, de la modélisation UML à l'écriture de nombreuses requêtes en SQL.
+      </p>
+      <p>
+        <strong>Compétences :</strong> SQL, Modélisation de données (UML), MySQL Workbench.
+      </p>
+    </div>
   </div>
 
 </body>
