@@ -5,7 +5,7 @@
   <title>Portfolio de Elyazid Kerrazi</title>
   <style>
     body { font-family: sans-serif; line-height: 1.6; margin: 20px 40px; }
-    h1, h2 { color: #333; }
+    h1, h2, h3 { color: #333; }
     hr { margin: 30px 0; }
     .projet { border-left: 4px solid #0366d6; padding-left: 15px; margin-bottom: 30px; }
   </style>
@@ -13,14 +13,48 @@
 <body>
 
   <h1>Mes Projets Académiques</h1>
-  <p>Bienvenue sur mon portfolio. Voici une sélection de projets réalisés durant mon cycle d'ingénieur à l'ENSEM.</p>
+  <p>Bienvenue sur mon portfolio. Voici une sélection de projets réalisés durant mon cycle d'ingénieur à l'ENSEM, en filière Systèmes Numériques (Systèmes Autonomes & IA).</p>
 
   <hr>
   
-  <h2>Projets de 2ème et 3ème Année</h2>
+  <h2>3ème Année</h2>
 
   <div class="projet">
-    <h2>Détection de Panneaux Routiers (Projet Twizzy)</h2>
+    <h3>Projet de Fin d'Études : Analyse de Fiabilité des Systèmes</h3>
+    <p>
+      <strong>Description :</strong> Contribution à un outil logiciel d'analyse de fiabilité basé sur les diagrammes de Hasse pour l'étendre aux systèmes multi-états (au-delà du binaire panne/marche).
+    </p>
+    <p>
+      <strong>Compétences :</strong> Sûreté de fonctionnement, Analyse de fiabilité, Diagrammes de Hasse.
+    </p>
+  </div>
+
+  <div class="projet">
+    <h3>Commande Automatique pour l'Atterrissage d'un Avion</h3>
+    <p>
+      <strong>Description :</strong> Conception d'une loi de commande robuste pour l'atterrissage automatique d'un A320. Linéarisation du modèle, création d'un observateur d'état et réglage d'un contrôleur PID sous Matlab/Simulink.
+    </p>
+    <p>
+      <strong>Compétences :</strong> Automatique avancée, Commande de systèmes non-linéaires, Matlab, Simulink.
+    </p>
+  </div>
+  
+  <div class="projet">
+    <h3>Pilotage de Systèmes Multi-Agents et Consensus</h3>
+    <p>
+      <strong>Description :</strong> Simulation et étude de la convergence d'un groupe d'agents autonomes via des algorithmes de consensus en temps continu et discret, basés sur la théorie des graphes.
+    </p>
+    <p>
+      <strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Théorie du contrôle, Matlab.
+    </p>
+  </div>
+
+  <hr>
+  
+  <h2>2ème Année</h2>
+
+  <div class="projet">
+    <h3>Détection de Panneaux Routiers (Projet Twizzy)</h3>
     <p>
       <strong>Description :</strong> Réalisation d'une application de traitement d'images pour la détection et la reconnaissance en temps réel de panneaux de signalisation.
     </p>
@@ -28,68 +62,38 @@
       <strong>Compétences :</strong> Traitement d'images, OpenCV, Python, Interface graphique.
     </p>
   </div>
-
-  <div class="projet">
-    <h2>Classification de Feuilles par Apprentissage Automatique</h2>
-    <p>
-      <strong>Description :</strong> Construction d'un classifieur de feuilles d'arbres en utilisant des approches probabilistes et des réseaux de neurones, incluant la réduction de dimension (ACP) et l'implémentation de modèles comme les K-moyennes.
-    </p>
-    <p>
-      <strong>Compétences :</strong> Machine Learning, Matlab, Analyse en Composantes Principales (ACP), Réseaux de neurones.
-    </p>
-  </div>
   
   <div class="projet">
-    <h2>Simulateur de Trafic Routier en C</h2>
+    <h3>Simulateur de Trafic Routier en C</h3>
     <p>
-      <strong>Description :</strong> Développement d'un simulateur de trafic en langage C, avec une version concurrente utilisant le multithreading pour gérer les véhicules et les feux de signalisation de manière synchronisée.
+      <strong>Description :</strong> Développement d'un simulateur de trafic en C, avec une version concurrente utilisant le multithreading pour gérer les véhicules et les feux de manière synchronisée.
     </p>
     <p>
       <strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading), Synchronisation (mutex).
     </p>
   </div>
-  
-  <div class="projet">
-    <h2>Routage et Commutation Réseau (Packet Tracer)</h2>
-    <p>
-      <strong>Description :</strong> Configuration d'une architecture réseau complète avec Cisco Packet Tracer, couvrant le routage statique et dynamique (RIP, OSPF) et la configuration de commutateurs Ethernet (STP).
-    </p>
-    <p>
-      <strong>Compétences :</strong> Réseaux informatiques, Cisco Packet Tracer, Protocoles de routage (RIP, OSPF).
-    </p>
-  </div>
-  
+
   <hr>
 
-  <h2>Projets de 1ère Année</h2>
+  <h2>1ère Année</h2>
 
   <div class="projet">
-    <h2>Problème du Voyageur de Commerce avec un Robot Lego</h2>
+    <h3>Calcul d'Itinéraire de Bus avec l'Algorithme de Dijkstra</h3>
     <p>
-      <strong>Description :</strong> Application d'algorithmes d'optimisation pour trouver le plus court chemin pour un robot Lego devant visiter plusieurs points.
+      <strong>Description :</strong> Développement d'une application en Java pour trouver l'itinéraire le plus rapide dans un réseau de bus en utilisant un graphe et l'algorithme de Dijkstra.
     </p>
     <p>
-      <strong>Compétences :</strong> Mathématiques (optimisation), Automatique (commande de robot), Informatique (C++, Matlab, TCP/IP).
+      <strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données.
     </p>
   </div>
 
   <div class="projet">
-    <h2>Modélisation et Interrogation d'une Base de Données</h2>
+    <h3>Modélisation et Interrogation d'une Base de Données</h3>
     <p>
       <strong>Description :</strong> Création et gestion d'une base de données d'employés, de la modélisation UML à l'écriture de nombreuses requêtes en SQL.
     </p>
     <p>
       <strong>Compétences :</strong> SQL, Modélisation de données (UML), MySQL Workbench.
-    </p>
-  </div>
-
-  <div class="projet">
-    <h2>Calcul d'Itinéraire de Bus avec l'Algorithme de Dijkstra</h2>
-    <p>
-      <strong>Description :</strong> Développement d'une application en Java pour trouver l'itinéraire le plus rapide dans un réseau de bus en utilisant un graphe et l'algorithme de Dijkstra.
-    </p>
-    <p>
-      <strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données (graphes).
     </p>
   </div>
 
