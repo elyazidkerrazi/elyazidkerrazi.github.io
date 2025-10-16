@@ -26,18 +26,10 @@
     h1, h2, h3 { 
       color: #2c3e50; 
     }
-
-    hr { 
-      border: 0;
-      height: 1px;
-      background: #ddd;
-      margin: 40px 0;
-    }
     
-    /* ---- NOUVEAU : Style pour les boutons de filtre ---- */
     .filtres {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
     .filtres button {
         background-color: #ffffff;
@@ -58,7 +50,10 @@
         background-color: #3498db;
         color: #ffffff;
     }
-    /* ---- FIN NOUVEAU ---- */
+
+    .projet-container {
+        display: block; /* Pour s'assurer qu'il est visible au départ */
+    }
 
     .projet { 
       background-color: #ffffff;
@@ -96,97 +91,101 @@
         <button onclick="filtrerProjets('1a')">1ère Année</button>
     </div>
 
-    <div class="projet-item 3a">
+    <div class="projet-container 3a">
         <div class="projet">
             <img src="https://placehold.co/800x400/3498db/ffffff?text=Fiabilit%C3%A9+Syst%C3%A8mes" alt="Image du projet Fiabilité des Systèmes">
             <h3>Projet de Fin d'Études : Analyse de Fiabilité des Systèmes</h3>
-            <p><strong>Description :</strong> ...</p>
+            <p><strong>Description :</strong> Contribution à un outil logiciel d'analyse de fiabilité basé sur les diagrammes de Hasse pour l'étendre aux systèmes multi-états (au-delà du binaire panne/marche).</p>
             <p><strong>Compétences :</strong> Sûreté de fonctionnement, Analyse de fiabilité, Diagrammes de Hasse.</p>
         </div>
     </div>
     
-    <div class="projet-item 3a">
+    <div class="projet-container 3a">
         <div class="projet">
           <img src="https://placehold.co/800x400/2ecc71/ffffff?text=Commande+Avion" alt="Image du projet Commande Avion">
           <h3>Commande Automatique pour l'Atterrissage d'un Avion</h3>
-          <p><strong>Description :</strong> ...</p>
-          <p><strong>Compétences :</strong> Automatique avancée, Matlab, Simulink.</p>
+          <p><strong>Description :</strong> Conception d'une loi de commande robuste pour l'atterrissage automatique d'un A320. Linéarisation du modèle, création d'un observateur d'état et réglage d'un contrôleur PID sous Matlab/Simulink.</p>
+          <p><strong>Compétences :</strong> Automatique avancée, Commande de systèmes non-linéaires, Matlab, Simulink.</p>
         </div>
     </div>
     
-    <div class="projet-item 3a">
+    <div class="projet-container 3a">
         <div class="projet">
             <img src="https://placehold.co/800x400/e74c3c/ffffff?text=Multi-Agents" alt="Image du projet Multi-Agents">
             <h3>Pilotage de Systèmes Multi-Agents et Consensus</h3>
-            <p><strong>Description :</strong> ...</p>
-            <p><strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Matlab.</p>
+            <p><strong>Description :</strong> Simulation et étude de la convergence d'un groupe d'agents autonomes via des algorithmes de consensus en temps continu et discret, basés sur la théorie des graphes.</p>
+            <p><strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Théorie du contrôle, Matlab.</p>
         </div>
     </div>
 
-    <div class="projet-item 2a">
+    <div class="projet-container 2a">
         <div class="projet">
             <img src="https://placehold.co/800x400/f1c40f/ffffff?text=Projet+Twizzy" alt="Image du projet Twizzy">
             <h3>Détection de Panneaux Routiers (Projet Twizzy)</h3>
-            <p><strong>Description :</strong> ...</p>
-            <p><strong>Compétences :</strong> Traitement d'images, OpenCV, Python.</p>
+            <p><strong>Description :</strong> Réalisation d'une application de traitement d'images pour la détection et la reconnaissance en temps réel de panneaux de signalisation.</p>
+            <p><strong>Compétences :</strong> Traitement d'images, OpenCV, Python, Interface graphique.</p>
         </div>
     </div>
     
-    <div class="projet-item 2a">
+    <div class="projet-container 2a">
         <div class="projet">
+            <img src="https://placehold.co/800x400/34495e/ffffff?text=Jeu+Labyrinthe" alt="Image du projet Labyrinthe">
             <h3>Jeu de Labyrinthe - Conception Logicielle</h3>
-            <p><strong>Description :</strong> ...</p>
+            <p><strong>Description :</strong> Développement d'un jeu en groupe (méthodologie Scrum) consistant à déplacer un personnage dans un labyrinthe pour trouver un trésor en évitant des monstres.</p>
             <p><strong>Compétences :</strong> Conception logicielle (UML), Méthodologie Agile (Scrum).</p>
         </div>
     </div>
     
-    <div class="projet-item 2a">
+    <div class="projet-container 2a">
         <div class="projet">
             <img src="https://placehold.co/800x400/9b59b6/ffffff?text=Trafic+Routier+C" alt="Image du projet Trafic Routier">
             <h3>Simulateur de Trafic Routier en C</h3>
-            <p><strong>Description :</strong> ...</p>
-            <p><strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading).</p>
+            <p><strong>Description :</strong> Développement d'un simulateur de trafic en C, avec une version concurrente utilisant le multithreading pour gérer les véhicules et les feux de manière synchronisée.</p>
+            <p><strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading), Synchronisation (mutex).</p>
         </div>
     </div>
     
-    <div class="projet-item 2a">
+    <div class="projet-container 2a">
         <div class="projet">
+            <img src="https://placehold.co/800x400/7f8c8d/ffffff?text=Packet+Tracer" alt="Image du projet Packet Tracer">
             <h3>Routage et Commutation Réseau (Packet Tracer)</h3>
-            <p><strong>Description :</strong> ...</p>
-            <p><strong>Compétences :</strong> Réseaux informatiques, Cisco Packet Tracer, Protocoles de routage.</p>
+            <p><strong>Description :</strong> Configuration d'une architecture réseau complète avec Cisco Packet Tracer, couvrant le routage statique et dynamique (RIP, OSPF) et la configuration de commutateurs Ethernet (STP).</p>
+            <p><strong>Compétences :</strong> Réseaux informatiques, Cisco Packet Tracer, Protocoles de routage (RIP, OSPF).</p>
         </div>
     </div>
 
-    <div class="projet-item 1a">
+    <div class="projet-container 1a">
         <div class="projet">
+            <img src="https://placehold.co/800x400/d35400/ffffff?text=Robot+Lego" alt="Image du projet Robot Lego">
             <h3>Problème du Voyageur de Commerce avec un Robot Lego</h3>
-            <p><strong>Description :</strong> ...</p>
+            <p><strong>Description :</strong> Application d'algorithmes d'optimisation pour trouver le plus court chemin pour un robot Lego devant visiter plusieurs points dans un bureau d'étude.</p>
             <p><strong>Compétences :</strong> Mathématiques (optimisation), Automatique, C++, Matlab.</p>
         </div>
     </div>
 
-    <div class="projet-item 1a">
+    <div class="projet-container 1a">
         <div class="projet">
             <img src="https://placehold.co/800x400/1abc9c/ffffff?text=Algo+Dijkstra" alt="Image du projet Dijkstra">
             <h3>Calcul d'Itinéraire de Bus avec l'Algorithme de Dijkstra</h3>
-            <p><strong>Description :</strong> ...</p>
+            <p><strong>Description :</strong> Développement d'une application en Java pour trouver l'itinéraire le plus rapide dans un réseau de bus en utilisant un graphe et l'algorithme de Dijkstra.</p>
             <p><strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données.</p>
         </div>
     </div>
 
-    <div class="projet-item 1a">
+    <div class="projet-container 1a">
         <div class="projet">
             <img src="https://placehold.co/800x400/e67e22/ffffff?text=Base+de+Donn%C3%A9es" alt="Image du projet Base de Données">
             <h3>Modélisation et Interrogation d'une Base de Données</h3>
-            <p><strong>Description :</strong> ...</p>
+            <p><strong>Description :</strong> Création et gestion d'une base de données d'employés, de la modélisation UML à l'écriture de nombreuses requêtes en SQL.</p>
             <p><strong>Compétences :</strong> SQL, Modélisation de données (UML), MySQL Workbench.</p>
         </div>
     </div>
     
-    <div class="projet-item 1a">
+    <div class="projet-container 1a">
         <div class="projet">
+            <img src="https://placehold.co/800x400/bdc3c7/ffffff?text=Algo+Force+Brute" alt="Image du projet Algorithme Force Brute">
             <h3>Équilibrage d'une Balance - Algorithme Force Brute</h3>
-            <p><strong>Description :</strong> ...</p>
+            <p><strong>Description :</strong> Projet d'algorithmique sur l'équilibrage d'une balance à n plateaux avec k poids, en implémentant et analysant la complexité d'un algorithme par force brute.</p>
             <p><strong>Compétences :</strong> Algorithmique, Analyse de complexité, Python.</p>
         </div>
     </div>
@@ -194,28 +193,23 @@
 
   <script>
     function filtrerProjets(annee) {
-      // Sélectionne tous les projets
-      const projets = document.querySelectorAll('.projet-item');
-      
-      // Sélectionne tous les boutons
+      const projets = document.querySelectorAll('.projet-container');
       const boutons = document.querySelectorAll('.filtres button');
 
-      // Pour chaque projet...
       projets.forEach(projet => {
-        // Si l'année correspond ou si on veut afficher 'tous'
         if (annee === 'tous' || projet.classList.contains(annee)) {
-          projet.style.display = 'block'; // ... on l'affiche
+          projet.style.display = 'block';
         } else {
-          projet.style.display = 'none';  // ... sinon on le cache
+          projet.style.display = 'none';
         }
       });
       
-      // Met à jour le style du bouton actif
       boutons.forEach(bouton => {
-          // Retire la classe 'actif' de tous les boutons
           bouton.classList.remove('actif');
-          // Si le texte du bouton correspond à l'année filtrée, on ajoute la classe 'actif'
-          if(bouton.textContent.toLowerCase().includes(annee) || (annee === 'tous' && bouton.textContent.toLowerCase().includes('toutes'))) {
+          if( (annee === 'tous' && bouton.textContent.includes('Toutes')) || 
+              (annee === '3a' && bouton.textContent.includes('3ème')) ||
+              (annee === '2a' && bouton.textContent.includes('2ème')) ||
+              (annee === '1a' && bouton.textContent.includes('1ère')) ) {
               bouton.classList.add('actif');
           }
       });
