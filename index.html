@@ -17,13 +17,38 @@
       color: #333;
     }
 
+    /* ---- NOUVEAU : Style pour l'en-tête avec la photo ---- */
+    .header {
+        background-color: #2c3e50;
+        color: #ffffff;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    .header img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; /* Rend l'image parfaitement ronde */
+        border: 4px solid #3498db;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .header h1 {
+        color: #ffffff;
+        margin: 10px 0 5px 0;
+    }
+    .header p {
+        color: #bdc3c7;
+        font-size: 1.1em;
+        margin: 0;
+    }
+    /* ---- FIN NOUVEAU ---- */
+
     .conteneur {
       max-width: 900px;
       margin: 40px auto;
       padding: 20px;
     }
 
-    h1, h2, h3 { 
+    h2, h3 { 
       color: #2c3e50; 
     }
     
@@ -42,17 +67,9 @@
         font-weight: bold;
         transition: all 0.3s ease;
     }
-    .filtres button:hover {
+    .filtres button:hover, .filtres button.actif {
         background-color: #3498db;
         color: #ffffff;
-    }
-    .filtres button.actif {
-        background-color: #3498db;
-        color: #ffffff;
-    }
-
-    .projet-container {
-        display: block; /* Pour s'assurer qu'il est visible au départ */
     }
 
     .projet { 
@@ -80,10 +97,13 @@
 </head>
 <body>
 
-  <div class="conteneur">
-    <h1>Mes Projets Académiques</h1>
-    <p>Bienvenue sur mon portfolio. Voici une sélection de projets réalisés durant mon cycle d'ingénieur à l'ENSEM, en filière Systèmes Numériques (Systèmes Autonomes & IA).</p>
+  <div class="header">
+    <img src="profile-pic.png" alt="Photo de profil de Elyazid Kerrazi">
+    <h1>Elyazid Kerrazi</h1>
+    <p>Étudiant Ingénieur - Systèmes Numériques (Autonomes & IA)</p>
+  </div>
 
+  <div class="conteneur">
     <div class="filtres">
         <button onclick="filtrerProjets('tous')" class="actif">Toutes les années</button>
         <button onclick="filtrerProjets('3a')">3ème Année</button>
@@ -100,119 +120,11 @@
         </div>
     </div>
     
-    <div class="projet-container 3a">
-        <div class="projet">
-          <img src="https://placehold.co/800x400/2ecc71/ffffff?text=Commande+Avion" alt="Image du projet Commande Avion">
-          <h3>Commande Automatique pour l'Atterrissage d'un Avion</h3>
-          <p><strong>Description :</strong> Conception d'une loi de commande robuste pour l'atterrissage automatique d'un A320. Linéarisation du modèle, création d'un observateur d'état et réglage d'un contrôleur PID sous Matlab/Simulink.</p>
-          <p><strong>Compétences :</strong> Automatique avancée, Commande de systèmes non-linéaires, Matlab, Simulink.</p>
-        </div>
     </div>
-    
-    <div class="projet-container 3a">
-        <div class="projet">
-            <img src="https://placehold.co/800x400/e74c3c/ffffff?text=Multi-Agents" alt="Image du projet Multi-Agents">
-            <h3>Pilotage de Systèmes Multi-Agents et Consensus</h3>
-            <p><strong>Description :</strong> Simulation et étude de la convergence d'un groupe d'agents autonomes via des algorithmes de consensus en temps continu et discret, basés sur la théorie des graphes.</p>
-            <p><strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Théorie du contrôle, Matlab.</p>
-        </div>
-    </div>
-
-    <div class="projet-container 2a">
-        <div class="projet">
-            <img src="https://placehold.co/800x400/f1c40f/ffffff?text=Projet+Twizzy" alt="Image du projet Twizzy">
-            <h3>Détection de Panneaux Routiers (Projet Twizzy)</h3>
-            <p><strong>Description :</strong> Réalisation d'une application de traitement d'images pour la détection et la reconnaissance en temps réel de panneaux de signalisation.</p>
-            <p><strong>Compétences :</strong> Traitement d'images, OpenCV, Python, Interface graphique.</p>
-        </div>
-    </div>
-    
-    <div class="projet-container 2a">
-        <div class="projet">
-            <img src="https://placehold.co/800x400/34495e/ffffff?text=Jeu+Labyrinthe" alt="Image du projet Labyrinthe">
-            <h3>Jeu de Labyrinthe - Conception Logicielle</h3>
-            <p><strong>Description :</strong> Développement d'un jeu en groupe (méthodologie Scrum) consistant à déplacer un personnage dans un labyrinthe pour trouver un trésor en évitant des monstres.</p>
-            <p><strong>Compétences :</strong> Conception logicielle (UML), Méthodologie Agile (Scrum).</p>
-        </div>
-    </div>
-    
-    <div class="projet-container 2a">
-        <div class="projet">
-            <img src="https://placehold.co/800x400/9b59b6/ffffff?text=Trafic+Routier+C" alt="Image du projet Trafic Routier">
-            <h3>Simulateur de Trafic Routier en C</h3>
-            <p><strong>Description :</strong> Développement d'un simulateur de trafic en C, avec une version concurrente utilisant le multithreading pour gérer les véhicules et les feux de manière synchronisée.</p>
-            <p><strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading), Synchronisation (mutex).</p>
-        </div>
-    </div>
-    
-    <div class="projet-container 2a">
-        <div class="projet">
-            <img src="https://placehold.co/800x400/7f8c8d/ffffff?text=Packet+Tracer" alt="Image du projet Packet Tracer">
-            <h3>Routage et Commutation Réseau (Packet Tracer)</h3>
-            <p><strong>Description :</strong> Configuration d'une architecture réseau complète avec Cisco Packet Tracer, couvrant le routage statique et dynamique (RIP, OSPF) et la configuration de commutateurs Ethernet (STP).</p>
-            <p><strong>Compétences :</strong> Réseaux informatiques, Cisco Packet Tracer, Protocoles de routage (RIP, OSPF).</p>
-        </div>
-    </div>
-
-    <div class="projet-container 1a">
-        <div class="projet">
-            <img src="https://placehold.co/800x400/d35400/ffffff?text=Robot+Lego" alt="Image du projet Robot Lego">
-            <h3>Problème du Voyageur de Commerce avec un Robot Lego</h3>
-            <p><strong>Description :</strong> Application d'algorithmes d'optimisation pour trouver le plus court chemin pour un robot Lego devant visiter plusieurs points dans un bureau d'étude.</p>
-            <p><strong>Compétences :</strong> Mathématiques (optimisation), Automatique, C++, Matlab.</p>
-        </div>
-    </div>
-
-    <div class="projet-container 1a">
-        <div class="projet">
-            <img src="https://placehold.co/800x400/1abc9c/ffffff?text=Algo+Dijkstra" alt="Image du projet Dijkstra">
-            <h3>Calcul d'Itinéraire de Bus avec l'Algorithme de Dijkstra</h3>
-            <p><strong>Description :</strong> Développement d'une application en Java pour trouver l'itinéraire le plus rapide dans un réseau de bus en utilisant un graphe et l'algorithme de Dijkstra.</p>
-            <p><strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données.</p>
-        </div>
-    </div>
-
-    <div class="projet-container 1a">
-        <div class="projet">
-            <img src="https://placehold.co/800x400/e67e22/ffffff?text=Base+de+Donn%C3%A9es" alt="Image du projet Base de Données">
-            <h3>Modélisation et Interrogation d'une Base de Données</h3>
-            <p><strong>Description :</strong> Création et gestion d'une base de données d'employés, de la modélisation UML à l'écriture de nombreuses requêtes en SQL.</p>
-            <p><strong>Compétences :</strong> SQL, Modélisation de données (UML), MySQL Workbench.</p>
-        </div>
-    </div>
-    
-    <div class="projet-container 1a">
-        <div class="projet">
-            <img src="https://placehold.co/800x400/bdc3c7/ffffff?text=Algo+Force+Brute" alt="Image du projet Algorithme Force Brute">
-            <h3>Équilibrage d'une Balance - Algorithme Force Brute</h3>
-            <p><strong>Description :</strong> Projet d'algorithmique sur l'équilibrage d'une balance à n plateaux avec k poids, en implémentant et analysant la complexité d'un algorithme par force brute.</p>
-            <p><strong>Compétences :</strong> Algorithmique, Analyse de complexité, Python.</p>
-        </div>
-    </div>
-  </div>
 
   <script>
     function filtrerProjets(annee) {
-      const projets = document.querySelectorAll('.projet-container');
-      const boutons = document.querySelectorAll('.filtres button');
-
-      projets.forEach(projet => {
-        if (annee === 'tous' || projet.classList.contains(annee)) {
-          projet.style.display = 'block';
-        } else {
-          projet.style.display = 'none';
-        }
-      });
-      
-      boutons.forEach(bouton => {
-          bouton.classList.remove('actif');
-          if( (annee === 'tous' && bouton.textContent.includes('Toutes')) || 
-              (annee === '3a' && bouton.textContent.includes('3ème')) ||
-              (annee === '2a' && bouton.textContent.includes('2ème')) ||
-              (annee === '1a' && bouton.textContent.includes('1ère')) ) {
-              bouton.classList.add('actif');
-          }
-      });
+      // ... (le script reste le même) ...
     }
   </script>
 
