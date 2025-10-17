@@ -52,7 +52,7 @@
     
     .filtres {
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
     .filtres button {
         background-color: #ffffff;
@@ -69,6 +69,24 @@
         background-color: #3498db;
         color: #ffffff;
     }
+    
+    /* ---- NOUVEAU : Style de la barre de recherche ---- */
+    .barre-recherche {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .barre-recherche input {
+        width: 50%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 20px;
+        font-size: 1em;
+    }
+    .barre-recherche input:focus {
+        outline: none;
+        border-color: #3498db;
+    }
+    /* ---- FIN NOUVEAU ---- */
 
     .projet-container {
         display: block;
@@ -94,6 +112,26 @@
         margin-top: 0;
         color: #3498db;
     }
+    
+    /* ---- NOUVEAU : Style pour les descriptions déroulantes ---- */
+    .btn-details {
+        background-color: #ecf0f1;
+        border: none;
+        color: #2c3e50;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .details-projet {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+    }
+    /* ---- FIN NOUVEAU ---- */
 
   </style>
 </head>
@@ -112,13 +150,22 @@
         <button onclick="filtrerProjets('2a')">2ème Année</button>
         <button onclick="filtrerProjets('1a')">1ère Année</button>
     </div>
+    
+    <div class="barre-recherche">
+        <input type="text" id="recherche" onkeyup="rechercherProjet()" placeholder="Rechercher par mot-clé (ex: Python, Matlab...)">
+    </div>
 
     <div class="projet-container 3a">
         <div class="projet">
             <img src="https://placehold.co/800x400/3498db/ffffff?text=Fiabilit%C3%A9+Syst%C3%A8mes" alt="Image du projet Fiabilité des Systèmes">
             <h3>Projet de Fin d'Études : Analyse de Fiabilité des Systèmes</h3>
-            <p><strong>Description :</strong> Contribution à un outil logiciel d'analyse de fiabilité basé sur les diagrammes de Hasse pour l'étendre aux systèmes multi-états (au-delà du binaire panne/marche).</p>
-            <p><strong>Compétences :</strong> Sûreté de fonctionnement, Analyse de fiabilité, Diagrammes de Hasse.</p>
+            <p><strong>Résumé :</strong> Extension d'un outil d'analyse de fiabilité pour y intégrer la gestion des systèmes complexes multi-états.</p>
+            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
+            <div class="details-projet">
+                <p><strong>Objectif :</strong> L'outil existant, basé sur les diagrammes de Hasse, ne gérait que les systèmes binaires (marche/arrêt). Le but était de l'étendre pour analyser la fiabilité de systèmes plus complexes, comme une flotte de drones, pouvant avoir plusieurs niveaux de performance.</p>
+                <p><strong>Ma solution :</strong> J'ai analysé l'architecture logicielle actuelle, proposé des améliorations pour modéliser les états multiples, puis implémenté ces modifications. J'ai ensuite utilisé l'outil amélioré pour évaluer la fiabilité et la disponibilité d'un système concret.</p>
+                <p><strong>Compétences :</strong> Sûreté de fonctionnement, Analyse de fiabilité, Diagrammes de Hasse, Développement logiciel.</p>
+            </div>
         </div>
     </div>
     
@@ -126,8 +173,13 @@
         <div class="projet">
           <img src="https://placehold.co/800x400/2ecc71/ffffff?text=Commande+Avion" alt="Image du projet Commande Avion">
           <h3>Commande Automatique pour l'Atterrissage d'un Avion</h3>
-          <p><strong>Description :</strong> Conception d'une loi de commande robuste pour l'atterrissage automatique d'un A320. Linéarisation du modèle, création d'un observateur d'état et réglage d'un contrôleur PID sous Matlab/Simulink.</p>
-          <p><strong>Compétences :</strong> Automatique avancée, Commande de systèmes non-linéaires, Matlab, Simulink.</p>
+          <p><strong>Résumé :</strong> Conception et simulation d'une loi de commande robuste pour l'atterrissage automatique d'un avion de ligne (modèle A320).</p>
+          <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
+            <div class="details-projet">
+                <p><strong>Objectif :</strong> Développer un pilote automatique capable de gérer la phase d'atterrissage, en respectant des contraintes de temps de réponse et de stabilité, même avec des perturbations (vent, pannes).</p>
+                <p><strong>Ma solution :</strong> À partir d'un modèle non-linéaire, j'ai linéarisé le système autour de son point d'équilibre. J'ai ensuite conçu un observateur d'état pour reconstruire les variables non mesurées et réglé un contrôleur PID via la méthode LQR (Linear Quadratic Regulator) sous Matlab et Simulink.</p>
+                <p><strong>Compétences :</strong> Automatique avancée, Commande de systèmes non-linéaires, Matlab, Simulink.</p>
+            </div>
         </div>
     </div>
     
@@ -135,8 +187,13 @@
         <div class="projet">
             <img src="https://placehold.co/800x400/e74c3c/ffffff?text=Multi-Agents" alt="Image du projet Multi-Agents">
             <h3>Pilotage de Systèmes Multi-Agents et Consensus</h3>
-            <p><strong>Description :</strong> Simulation et étude de la convergence d'un groupe d'agents autonomes via des algorithmes de consensus en temps continu et discret, basés sur la théorie des graphes.</p>
-            <p><strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Théorie du contrôle, Matlab.</p>
+            <p><strong>Résumé :</strong> Étude et simulation des algorithmes permettant à un groupe d'agents autonomes de converger vers un état ou une formation commune.</p>
+             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
+            <div class="details-projet">
+                <p><strong>Objectif :</strong> Comprendre et implémenter les principes de la théorie du consensus pour des systèmes multi-agents, un concept clé pour la robotique en essaim ou les flottes de véhicules autonomes.</p>
+                <p><strong>Ma solution :</strong> En utilisant la théorie des graphes (matrice Laplacienne), j'ai simulé en temps continu et discret des algorithmes de consensus. J'ai également étendu l'étude à des problèmes de "flocking" (alignement de vitesse) et de contrôle de formation (disposer les agents en cercle).</p>
+                <p><strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Théorie du contrôle, Matlab.</p>
+            </div>
         </div>
     </div>
 
@@ -144,8 +201,13 @@
         <div class="projet">
             <img src="https://placehold.co/800x400/f1c40f/ffffff?text=Projet+Twizzy" alt="Image du projet Twizzy">
             <h3>Détection de Panneaux Routiers (Projet Twizzy)</h3>
-            <p><strong>Description :</strong> Réalisation d'une application de traitement d'images pour la détection et la reconnaissance en temps réel de panneaux de signalisation.</p>
-            <p><strong>Compétences :</strong> Traitement d'images, OpenCV, Python, Interface graphique.</p>
+            <p><strong>Résumé :</strong> Création d'une application de vision par ordinateur pour détecter et reconnaître les panneaux de limitation de vitesse depuis un flux vidéo.</p>
+             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
+            <div class="details-projet">
+                <p><strong>Objectif :</strong> Mettre en place une chaîne de traitement d'images complète, de l'acquisition vidéo à la classification d'un objet d'intérêt.</p>
+                <p><strong>Ma solution :</strong> J'ai développé un script en Python utilisant la bibliothèque OpenCV. Le processus incluait la conversion de l'espace de couleurs (vers HSV pour la segmentation), la détection de formes géométriques (cercles) et l'extraction de caractéristiques pour la reconnaissance.</p>
+                <p><strong>Compétences :</strong> Traitement d'images, OpenCV, Python, Interface graphique.</p>
+            </div>
         </div>
     </div>
     
@@ -153,8 +215,13 @@
         <div class="projet">
             <img src="https://placehold.co/800x400/34495e/ffffff?text=Jeu+Labyrinthe" alt="Image du projet Labyrinthe">
             <h3>Jeu de Labyrinthe - Conception Logicielle</h3>
-            <p><strong>Description :</strong> Développement d'un jeu en groupe (méthodologie Scrum) consistant à déplacer un personnage dans un labyrinthe pour trouver un trésor en évitant des monstres.</p>
-            <p><strong>Compétences :</strong> Conception logicielle (UML), Méthodologie Agile (Scrum).</p>
+            <p><strong>Résumé :</strong> Développement en équipe d'un jeu de labyrinthe en suivant une méthodologie de gestion de projet Agile.</p>
+            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
+            <div class="details-projet">
+                <p><strong>Objectif :</strong> Appliquer les principes de l'analyse et de la conception de logiciels (UML) dans un projet de groupe, en utilisant des sprints de développement de type Scrum.</p>
+                <p><strong>Ma solution :</strong> Mon équipe et moi avons conçu le jeu en plusieurs itérations. J'ai participé à l'élaboration des diagrammes UML, au développement des fonctionnalités (déplacement, monstres) et à la validation par des tests à la fin de chaque sprint.</p>
+                <p><strong>Compétences :</strong> Conception logicielle (UML), Méthodologie Agile (Scrum), Travail d'équipe.</p>
+            </div>
         </div>
     </div>
     
@@ -162,8 +229,13 @@
         <div class="projet">
             <img src="https://placehold.co/800x400/9b59b6/ffffff?text=Trafic+Routier+C" alt="Image du projet Trafic Routier">
             <h3>Simulateur de Trafic Routier en C</h3>
-            <p><strong>Description :</strong> Développement d'un simulateur de trafic en C, avec une version concurrente utilisant le multithreading pour gérer les véhicules et les feux de manière synchronisée.</p>
-            <p><strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading), Synchronisation (mutex).</p>
+            <p><strong>Résumé :</strong> Développement d'un simulateur de trafic en C, avec un focus sur la gestion de la concurrence et de la synchronisation.</p>
+             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
+            <div class="details-projet">
+                <p><strong>Objectif :</strong> Simuler le déplacement de plusieurs véhicules sur un réseau routier sans qu'ils n'entrent en collision, en utilisant des concepts de programmation système avancés.</p>
+                <p><strong>Ma solution :</strong> J'ai d'abord créé une version séquentielle. Ensuite, j'ai développé une version concurrente où chaque véhicule et chaque feu de signalisation est un thread distinct. J'ai utilisé des mutex pour protéger l'accès aux intersections et garantir une simulation sans conflits.</p>
+                <p><strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading), Synchronisation (mutex).</p>
+            </div>
         </div>
     </div>
     
@@ -171,8 +243,13 @@
         <div class="projet">
             <img src="https://placehold.co/800x400/7f8c8d/ffffff?text=Packet+Tracer" alt="Image du projet Packet Tracer">
             <h3>Routage et Commutation Réseau (Packet Tracer)</h3>
-            <p><strong>Description :</strong> Configuration d'une architecture réseau complète avec Cisco Packet Tracer, couvrant le routage statique et dynamique (RIP, OSPF) et la configuration de commutateurs Ethernet (STP).</p>
-            <p><strong>Compétences :</strong> Réseaux informatiques, Cisco Packet Tracer, Protocoles de routage (RIP, OSPF).</p>
+            <p><strong>Résumé :</strong> Configuration d'une architecture réseau complète pour maîtriser les concepts de routage et de commutation.</p>
+            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
+            <div class="details-projet">
+                <p><strong>Objectif :</strong> Simuler un modèle réduit d'Internet pour comprendre comment les données transitent entre différents réseaux locaux.</p>
+                <p><strong>Ma solution :</strong> En utilisant le simulateur Cisco Packet Tracer, j'ai configuré les tables de routage de plusieurs routeurs, d'abord en statique, puis avec des protocoles dynamiques comme RIP et OSPF. J'ai également exploré la commutation de niveau 2 avec le protocole Spanning Tree (STP).</p>
+                <p><strong>Compétences :</strong> Réseaux informatiques, Cisco Packet Tracer, Protocoles de routage (RIP, OSPF).</p>
+            </div>
         </div>
     </div>
 
@@ -180,8 +257,13 @@
         <div class="projet">
             <img src="https://placehold.co/800x400/d35400/ffffff?text=Robot+Lego" alt="Image du projet Robot Lego">
             <h3>Problème du Voyageur de Commerce avec un Robot Lego</h3>
-            <p><strong>Description :</strong> Application d'algorithmes d'optimisation pour trouver le plus court chemin pour un robot Lego devant visiter plusieurs points dans un bureau d'étude.</p>
-            <p><strong>Compétences :</strong> Mathématiques (optimisation), Automatique, C++, Matlab.</p>
+            <p><strong>Résumé :</strong> Application pratique d'algorithmes d'optimisation pour résoudre un problème de recherche du plus court chemin.</p>
+            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
+            <div class="details-projet">
+                <p><strong>Objectif :</strong> Dans le cadre d'un bureau d'étude, programmer un robot Lego pour qu'il visite une série de points en parcourant la distance la plus courte possible, une version physique du "problème du voyageur de commerce".</p>
+                <p><strong>Ma solution :</strong> J'ai participé à l'implémentation de différentes heuristiques d'optimisation et à la programmation du robot en C++ et Matlab pour suivre la trajectoire calculée, en intégrant des aspects de commande automatique.</p>
+                <p><strong>Compétences :</strong> Mathématiques (optimisation), Automatique, C++, Matlab.</p>
+            </div>
         </div>
     </div>
 
@@ -189,8 +271,13 @@
         <div class="projet">
             <img src="https://placehold.co/800x400/1abc9c/ffffff?text=Algo+Dijkstra" alt="Image du projet Dijkstra">
             <h3>Calcul d'Itinéraire de Bus avec l'Algorithme de Dijkstra</h3>
-            <p><strong>Description :</strong> Développement d'une application en Java pour trouver l'itinéraire le plus rapide dans un réseau de bus en utilisant un graphe et l'algorithme de Dijkstra.</p>
-            <p><strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données.</p>
+            <p><strong>Résumé :</strong> Développement d'une application en Java pour calculer le trajet optimal dans un réseau de transport.</p>
+            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
+            <div class="details-projet">
+                <p><strong>Objectif :</strong> Appliquer un algorithme de théorie des graphes classique à un problème concret.</p>
+                <p><strong>Ma solution :</strong> J'ai modélisé le réseau de bus sous forme de graphe pondéré, où les arrêts sont les sommets et les temps de trajet sont les poids des arêtes. J'ai ensuite implémenté l'algorithme de Dijkstra pour trouver le plus court chemin entre deux arrêts choisis par l'utilisateur via une interface graphique.</p>
+                <p><strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données, Interface graphique.</p>
+            </div>
         </div>
     </div>
 
@@ -198,8 +285,13 @@
         <div class="projet">
             <img src="https://placehold.co/800x400/e67e22/ffffff?text=Base+de+Donn%C3%A9es" alt="Image du projet Base de Données">
             <h3>Modélisation et Interrogation d'une Base de Données</h3>
-            <p><strong>Description :</strong> Création et gestion d'une base de données d'employés, de la modélisation UML à l'écriture de nombreuses requêtes en SQL.</p>
-            <p><strong>Compétences :</strong> SQL, Modélisation de données (UML), MySQL Workbench.</p>
+            <p><strong>Résumé :</strong> Conception et manipulation d'une base de données relationnelle pour la gestion d'employés.</p>
+            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
+            <div class="details-projet">
+                <p><strong>Objectif :</strong> Maîtriser le cycle de vie d'une base de données, de la conception à l'interrogation complexe.</p>
+                <p><strong>Ma solution :</strong> En partant d'un cahier des charges, j'ai élaboré un modèle UML puis un schéma relationnel. J'ai ensuite créé la base avec MySQL Workbench et écrit une série de requêtes SQL complexes pour extraire des informations spécifiques (salaires, managers, etc.).</p>
+                <p><strong>Compétences :</strong> SQL, Modélisation de données (UML), MySQL Workbench.</p>
+            </div>
         </div>
     </div>
     
@@ -207,13 +299,31 @@
         <div class="projet">
             <img src="https://placehold.co/800x400/bdc3c7/ffffff?text=Algo+Force+Brute" alt="Image du projet Algorithme Force Brute">
             <h3>Équilibrage d'une Balance - Algorithme Force Brute</h3>
-            <p><strong>Description :</strong> Projet d'algorithmique sur l'équilibrage d'une balance à n plateaux avec k poids, en implémentant et analysant la complexité d'un algorithme par force brute.</p>
-            <p><strong>Compétences :</strong> Algorithmique, Analyse de complexité, Python.</p>
+            <p><strong>Résumé :</strong> Exploration d'une solution algorithmique pour un problème combinatoire et analyse de sa performance.</p>
+            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
+            <div class="details-projet">
+                <p><strong>Objectif :</strong> Résoudre le problème de l'équilibrage d'une balance à n plateaux avec k poids, et comprendre les limites des algorithmes exhaustifs.</p>
+                <p><strong>Ma solution :</strong> J'ai implémenté un algorithme en Python qui teste toutes les combinaisons possibles (approche par "force brute") pour trouver les solutions. J'ai ensuite analysé sa complexité algorithmique pour montrer son caractère exponentiel et son inefficacité pour de grands nombres de poids.</p>
+                <p><strong>Compétences :</strong> Algorithmique, Analyse de complexité, Python.</p>
+            </div>
         </div>
     </div>
   </div>
 
   <script>
+    // Gère le clic sur le bouton "Voir plus"
+    function toggleDetails(button) {
+      const details = button.nextElementSibling;
+      if (details.style.maxHeight) {
+        details.style.maxHeight = null;
+        button.textContent = 'Voir plus';
+      } else {
+        details.style.maxHeight = details.scrollHeight + 'px';
+        button.textContent = 'Voir moins';
+      }
+    }
+
+    // Gère le filtrage par année
     function filtrerProjets(annee) {
       const projets = document.querySelectorAll('.projet-container');
       const boutons = document.querySelectorAll('.filtres button');
@@ -235,6 +345,22 @@
               bouton.classList.add('actif');
           }
       });
+    }
+
+    // Gère la recherche par mot-clé
+    function rechercherProjet() {
+        const input = document.getElementById('recherche');
+        const filtre = input.value.toLowerCase();
+        const projets = document.querySelectorAll('.projet-container');
+
+        projets.forEach(projet => {
+            const texteProjet = projet.textContent || projet.innerText;
+            if (texteProjet.toLowerCase().includes(filtre)) {
+                projet.style.display = 'block';
+            } else {
+                projet.style.display = 'none';
+            }
+        });
     }
   </script>
 
