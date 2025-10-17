@@ -70,7 +70,6 @@
         color: #ffffff;
     }
     
-    /* ---- NOUVEAU : Style de la barre de recherche ---- */
     .barre-recherche {
         text-align: center;
         margin-bottom: 40px;
@@ -86,7 +85,6 @@
         outline: none;
         border-color: #3498db;
     }
-    /* ---- FIN NOUVEAU ---- */
 
     .projet-container {
         display: block;
@@ -104,6 +102,8 @@
     
     .projet img {
       width: 100%;
+      height: 350px;
+      object-fit: cover;
       border-radius: 5px;
       margin-bottom: 15px;
     }
@@ -113,7 +113,6 @@
         color: #3498db;
     }
     
-    /* ---- NOUVEAU : Style pour les descriptions déroulantes ---- */
     .btn-details {
         background-color: #ecf0f1;
         border: none;
@@ -131,14 +130,13 @@
         padding-top: 15px;
         border-top: 1px solid #eee;
     }
-    /* ---- FIN NOUVEAU ---- */
 
   </style>
 </head>
 <body>
 
   <div class="header">
-    <img src="profile-pic.png" alt="Photo de profil de Elyazid Kerrazi">
+    <img src="https://i.postimg.cc/13Yp91yQ/profile-pic.png" alt="Photo de profil de Elyazid Kerrazi">
     <h1>Elyazid Kerrazi</h1>
     <p>Étudiant Ingénieur - Systèmes Numériques (Autonomes & IA)</p>
   </div>
@@ -157,7 +155,7 @@
 
     <div class="projet-container 3a">
         <div class="projet">
-            <img src="https://placehold.co/800x400/3498db/ffffff?text=Fiabilit%C3%A9+Syst%C3%A8mes" alt="Image du projet Fiabilité des Systèmes">
+            <img src="https://i.postimg.cc/D0B3qf8h/projet-fiabilite.jpg" alt="Image du projet Fiabilité des Systèmes">
             <h3>Projet de Fin d'Études : Analyse de Fiabilité des Systèmes</h3>
             <p><strong>Résumé :</strong> Extension d'un outil d'analyse de fiabilité pour y intégrer la gestion des systèmes complexes multi-états.</p>
             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
@@ -171,7 +169,7 @@
     
     <div class="projet-container 3a">
         <div class="projet">
-          <img src="https://placehold.co/800x400/2ecc71/ffffff?text=Commande+Avion" alt="Image du projet Commande Avion">
+          <img src="https://i.postimg.cc/C1Q1W3gY/projet-avion.jpg" alt="Image du projet Commande Avion">
           <h3>Commande Automatique pour l'Atterrissage d'un Avion</h3>
           <p><strong>Résumé :</strong> Conception et simulation d'une loi de commande robuste pour l'atterrissage automatique d'un avion de ligne (modèle A320).</p>
           <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
@@ -185,7 +183,7 @@
     
     <div class="projet-container 3a">
         <div class="projet">
-            <img src="https://placehold.co/800x400/e74c3c/ffffff?text=Multi-Agents" alt="Image du projet Multi-Agents">
+            <img src="https://i.postimg.cc/8P2zPYSj/projet-multi-agents.jpg" alt="Image du projet Multi-Agents">
             <h3>Pilotage de Systèmes Multi-Agents et Consensus</h3>
             <p><strong>Résumé :</strong> Étude et simulation des algorithmes permettant à un groupe d'agents autonomes de converger vers un état ou une formation commune.</p>
              <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
@@ -199,7 +197,7 @@
 
     <div class="projet-container 2a">
         <div class="projet">
-            <img src="https://placehold.co/800x400/f1c40f/ffffff?text=Projet+Twizzy" alt="Image du projet Twizzy">
+            <img src="https://i.postimg.cc/fRH2w2zN/projet-twizzy.jpg" alt="Image du projet Twizzy">
             <h3>Détection de Panneaux Routiers (Projet Twizzy)</h3>
             <p><strong>Résumé :</strong> Création d'une application de vision par ordinateur pour détecter et reconnaître les panneaux de limitation de vitesse depuis un flux vidéo.</p>
              <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
@@ -213,7 +211,7 @@
     
     <div class="projet-container 2a">
         <div class="projet">
-            <img src="https://placehold.co/800x400/34495e/ffffff?text=Jeu+Labyrinthe" alt="Image du projet Labyrinthe">
+            <img src="https://i.postimg.cc/k47tX4Q3/projet-labyrinthe.jpg" alt="Image du projet Labyrinthe">
             <h3>Jeu de Labyrinthe - Conception Logicielle</h3>
             <p><strong>Résumé :</strong> Développement en équipe d'un jeu de labyrinthe en suivant une méthodologie de gestion de projet Agile.</p>
             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
@@ -227,7 +225,7 @@
     
     <div class="projet-container 2a">
         <div class="projet">
-            <img src="https://placehold.co/800x400/9b59b6/ffffff?text=Trafic+Routier+C" alt="Image du projet Trafic Routier">
+            <img src="https://i.postimg.cc/sXvY9W3d/projet-trafic.jpg" alt="Image du projet Trafic Routier">
             <h3>Simulateur de Trafic Routier en C</h3>
             <p><strong>Résumé :</strong> Développement d'un simulateur de trafic en C, avec un focus sur la gestion de la concurrence et de la synchronisation.</p>
              <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
@@ -241,7 +239,7 @@
     
     <div class="projet-container 2a">
         <div class="projet">
-            <img src="https://placehold.co/800x400/7f8c8d/ffffff?text=Packet+Tracer" alt="Image du projet Packet Tracer">
+            <img src="https://i.postimg.cc/T3N3rRw1/projet-reseau.jpg" alt="Image du projet Packet Tracer">
             <h3>Routage et Commutation Réseau (Packet Tracer)</h3>
             <p><strong>Résumé :</strong> Configuration d'une architecture réseau complète pour maîtriser les concepts de routage et de commutation.</p>
             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
@@ -255,7 +253,7 @@
 
     <div class="projet-container 1a">
         <div class="projet">
-            <img src="https://placehold.co/800x400/d35400/ffffff?text=Robot+Lego" alt="Image du projet Robot Lego">
+            <img src="https://i.postimg.cc/wMP2kM7d/projet-lego.jpg" alt="Image du projet Robot Lego">
             <h3>Problème du Voyageur de Commerce avec un Robot Lego</h3>
             <p><strong>Résumé :</strong> Application pratique d'algorithmes d'optimisation pour résoudre un problème de recherche du plus court chemin.</p>
             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
@@ -269,7 +267,7 @@
 
     <div class="projet-container 1a">
         <div class="projet">
-            <img src="https://placehold.co/800x400/1abc9c/ffffff?text=Algo+Dijkstra" alt="Image du projet Dijkstra">
+            <img src="https://i.postimg.cc/50tQGggr/projet-dijkstra.jpg" alt="Image du projet Dijkstra">
             <h3>Calcul d'Itinéraire de Bus avec l'Algorithme de Dijkstra</h3>
             <p><strong>Résumé :</strong> Développement d'une application en Java pour calculer le trajet optimal dans un réseau de transport.</p>
             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
@@ -283,7 +281,7 @@
 
     <div class="projet-container 1a">
         <div class="projet">
-            <img src="https://placehold.co/800x400/e67e22/ffffff?text=Base+de+Donn%C3%A9es" alt="Image du projet Base de Données">
+            <img src="https://i.postimg.cc/W3tChBjg/projet-sql.jpg" alt="Image du projet Base de Données">
             <h3>Modélisation et Interrogation d'une Base de Données</h3>
             <p><strong>Résumé :</strong> Conception et manipulation d'une base de données relationnelle pour la gestion d'employés.</p>
             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
@@ -297,7 +295,7 @@
     
     <div class="projet-container 1a">
         <div class="projet">
-            <img src="https://placehold.co/800x400/bdc3c7/ffffff?text=Algo+Force+Brute" alt="Image du projet Algorithme Force Brute">
+            <img src="https://i.postimg.cc/L5nPCQxX/projet-balance.jpg" alt="Image du projet Algorithme Force Brute">
             <h3>Équilibrage d'une Balance - Algorithme Force Brute</h3>
             <p><strong>Résumé :</strong> Exploration d'une solution algorithmique pour un problème combinatoire et analyse de sa performance.</p>
             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
@@ -323,44 +321,41 @@
       }
     }
 
-    // Gère le filtrage par année
-    function filtrerProjets(annee) {
-      const projets = document.querySelectorAll('.projet-container');
-      const boutons = document.querySelectorAll('.filtres button');
-
-      projets.forEach(projet => {
-        if (annee === 'tous' || projet.classList.contains(annee)) {
-          projet.style.display = 'block';
-        } else {
-          projet.style.display = 'none';
-        }
-      });
-      
-      boutons.forEach(bouton => {
-          bouton.classList.remove('actif');
-          if( (annee === 'tous' && bouton.textContent.includes('Toutes')) || 
-              (annee === '3a' && bouton.textContent.includes('3ème')) ||
-              (annee === '2a' && bouton.textContent.includes('2ème')) ||
-              (annee === '1a' && bouton.textContent.includes('1ère')) ) {
-              bouton.classList.add('actif');
-          }
-      });
-    }
-
-    // Gère la recherche par mot-clé
-    function rechercherProjet() {
-        const input = document.getElementById('recherche');
-        const filtre = input.value.toLowerCase();
+    // Gère le filtrage par année et par recherche
+    function filterAndSearch() {
+        const anneeSelectionnee = document.querySelector('.filtres button.actif').getAttribute('onclick').split("'")[1];
+        const termeRecherche = document.getElementById('recherche').value.toLowerCase();
         const projets = document.querySelectorAll('.projet-container');
 
         projets.forEach(projet => {
+            const estDansAnnee = anneeSelectionnee === 'tous' || projet.classList.contains(anneeSelectionnee);
             const texteProjet = projet.textContent || projet.innerText;
-            if (texteProjet.toLowerCase().includes(filtre)) {
+            const correspondRecherche = texteProjet.toLowerCase().includes(termeRecherche);
+
+            if (estDansAnnee && correspondRecherche) {
                 projet.style.display = 'block';
             } else {
                 projet.style.display = 'none';
             }
         });
+    }
+
+    // Gère le filtrage par année
+    function filtrerProjets(annee) {
+      const boutons = document.querySelectorAll('.filtres button');
+      boutons.forEach(bouton => {
+          bouton.classList.remove('actif');
+          const anneeBouton = bouton.getAttribute('onclick').split("'")[1];
+          if (anneeBouton === annee) {
+              bouton.classList.add('actif');
+          }
+      });
+      filterAndSearch();
+    }
+
+    // Gère la recherche par mot-clé
+    function rechercherProjet() {
+        filterAndSearch();
     }
   </script>
 
