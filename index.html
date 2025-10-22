@@ -1,363 +1,197 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio de Elyazid Kerrazi</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    body { 
-      font-family: 'Lato', sans-serif; 
-      line-height: 1.6; 
-      margin: 0;
-      background-color: #f4f4f9;
-      color: #333;
-    }
-
-    .header {
-        background-color: #2c3e50;
-        color: #ffffff;
-        padding: 40px 20px;
-        text-align: center;
-    }
-    .header img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 4px solid #3498db;
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-    .header h1 {
-        color: #ffffff;
-        margin: 10px 0 5px 0;
-    }
-    .header p {
-        color: #bdc3c7;
-        font-size: 1.1em;
-        margin: 0;
-    }
-
-    .conteneur {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    h2, h3 { 
-      color: #2c3e50; 
-    }
-    
-    .filtres {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .filtres button {
-        background-color: #ffffff;
-        border: 2px solid #3498db;
-        color: #3498db;
-        padding: 10px 20px;
-        margin: 5px;
-        border-radius: 20px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    }
-    .filtres button:hover, .filtres button.actif {
-        background-color: #3498db;
-        color: #ffffff;
-    }
-    
-    .barre-recherche {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    .barre-recherche input {
-        width: 50%;
-        padding: 12px;
-        border: 2px solid #ddd;
-        border-radius: 20px;
-        font-size: 1em;
-    }
-    .barre-recherche input:focus {
-        outline: none;
-        border-color: #3498db;
-    }
-
-    .projet-container {
-        display: block;
-    }
-
-    .projet { 
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      padding: 20px; 
-      margin-bottom: 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    
-    .projet img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 5px;
-      margin-bottom: 15px;
-    }
-
-    .projet h3 {
-        margin-top: 0;
-        color: #3498db;
-    }
-    
-    .btn-details {
-        background-color: #ecf0f1;
-        border: none;
-        color: #2c3e50;
-        padding: 8px 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-    .details-projet {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease-out;
-        margin-top: 15px;
-        padding-top: 15px;
-        border-top: 1px solid #eee;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Elyazid Kerrazi</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Styles rapides pour la démonstration (adaptez à votre CSS) */
+        body { font-family: sans-serif; margin: 0; background-color: #f4f4f4; }
+        .header { background-color: #2c3e50; color: white; padding: 40px 20px; text-align: center; }
+        .header img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px; }
+        .header h1 { margin: 10px 0 5px 0; }
+        .header p { margin: 0; color: #bdc3c7; }
+        .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+        .filters { text-align: center; margin-bottom: 30px; }
+        .filters button { background-color: #3498db; color: white; border: none; padding: 10px 15px; margin: 5px; border-radius: 5px; cursor: pointer; }
+        .filters button.active, .filters button:hover { background-color: #2980b9; }
+        .search-bar { text-align: center; margin-bottom: 30px; }
+        .search-bar input { padding: 10px; width: 60%; max-width: 400px; border: 1px solid #ccc; border-radius: 5px; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .project-card { background-color: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; }
+        .project-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .project-content { padding: 15px; }
+        .project-content h3 { margin-top: 0; margin-bottom: 10px; color: #333; }
+        .project-content p { font-size: 0.9em; color: #666; margin-bottom: 15px; }
+        .project-content .details { font-size: 0.85em; color: #777; margin-top: 10px; }
+        /* Ajoutez d'autres styles selon votre design original */
+    </style>
 </head>
 <body>
 
-  <div class="header">
-    <img src="https://i.postimg.cc/13Yp91yQ/profile-pic.png" alt="Photo de profil de Elyazid Kerrazi">
-    <h1>Elyazid Kerrazi</h1>
-    <p>Étudiant Ingénieur - Systèmes Numériques (Autonomes & IA)</p>
-  </div>
+    <header class="header">
+        <img src="images/profile-pic.png" alt="Photo de profil de Elyazid Kerrazi">
+        <h1>Elyazid Kerrazi</h1>
+        <p>Étudiant Ingénieur - Systèmes Numériques (Autonomes & IA)</p>
+    </header>
 
-  <div class="conteneur">
-    <div class="filtres">
-        <button onclick="filtrerProjets('tous')" class="actif">Toutes les années</button>
-        <button onclick="filtrerProjets('3a')">3ème Année</button>
-        <button onclick="filtrerProjets('2a')">2ème Année</button>
-        <button onclick="filtrerProjets('1a')">1ère Année</button>
-    </div>
-    
-    <div class="barre-recherche">
-        <input type="text" id="recherche" onkeyup="rechercherProjet()" placeholder="Rechercher par mot-clé (ex: Python, Matlab...)">
-    </div>
-
-    <div class="projet-container 3a">
-        <div class="projet">
-            <img src="https://i.postimg.cc/D0B3qf8h/projet-fiabilite.jpg" alt="Image du projet Fiabilité des Systèmes">
-            <h3>Projet de Fin d'Études : Analyse de Fiabilité des Systèmes</h3>
-            <p><strong>Résumé :</strong> Extension d'un outil d'analyse de fiabilité pour y intégrer la gestion des systèmes complexes multi-états.</p>
-            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
-            <div class="details-projet">
-                <p><strong>Objectif :</strong> L'outil existant, basé sur les diagrammes de Hasse, ne gérait que les systèmes binaires (marche/arrêt). Le but était de l'étendre pour analyser la fiabilité de systèmes plus complexes, comme une flotte de drones, pouvant avoir plusieurs niveaux de performance.</p>
-                <p><strong>Ma solution :</strong> J'ai analysé l'architecture logicielle actuelle, proposé des améliorations pour modéliser les états multiples, puis implémenté ces modifications. J'ai ensuite utilisé l'outil amélioré pour évaluer la fiabilité et la disponibilité d'un système concret.</p>
-                <p><strong>Compétences :</strong> Sûreté de fonctionnement, Analyse de fiabilité, Diagrammes de Hasse, Développement logiciel.</p>
-            </div>
+    <div class="container">
+        <div class="filters">
+            <button class="active">Toutes les années</button>
+            <button>3ème Année</button>
+            <button>2ème Année</button>
+            <button>1ère Année</button>
         </div>
-    </div>
-    
-    <div class="projet-container 3a">
-        <div class="projet">
-          <img src="https://i.postimg.cc/C1Q1W3gY/projet-avion.jpg" alt="Image du projet Commande Avion">
-          <h3>Commande Automatique pour l'Atterrissage d'un Avion</h3>
-          <p><strong>Résumé :</strong> Conception et simulation d'une loi de commande robuste pour l'atterrissage automatique d'un avion de ligne (modèle A320).</p>
-          <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
-            <div class="details-projet">
-                <p><strong>Objectif :</strong> Développer un pilote automatique capable de gérer la phase d'atterrissage, en respectant des contraintes de temps de réponse et de stabilité, même avec des perturbations (vent, pannes).</p>
-                <p><strong>Ma solution :</strong> À partir d'un modèle non-linéaire, j'ai linéarisé le système autour de son point d'équilibre. J'ai ensuite conçu un observateur d'état pour reconstruire les variables non mesurées et réglé un contrôleur PID via la méthode LQR (Linear Quadratic Regulator) sous Matlab et Simulink.</p>
-                <p><strong>Compétences :</strong> Automatique avancée, Commande de systèmes non-linéaires, Matlab, Simulink.</p>
-            </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher par mot-clé (ex: Python, Matlab...)">
         </div>
-    </div>
-    
-    <div class="projet-container 3a">
-        <div class="projet">
-            <img src="https://i.postimg.cc/8P2zPYSj/projet-multi-agents.jpg" alt="Image du projet Multi-Agents">
-            <h3>Pilotage de Systèmes Multi-Agents et Consensus</h3>
-            <p><strong>Résumé :</strong> Étude et simulation des algorithmes permettant à un groupe d'agents autonomes de converger vers un état ou une formation commune.</p>
-             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
-            <div class="details-projet">
-                <p><strong>Objectif :</strong> Comprendre et implémenter les principes de la théorie du consensus pour des systèmes multi-agents, un concept clé pour la robotique en essaim ou les flottes de véhicules autonomes.</p>
-                <p><strong>Ma solution :</strong> En utilisant la théorie des graphes (matrice Laplacienne), j'ai simulé en temps continu et discret des algorithmes de consensus. J'ai également étendu l'étude à des problèmes de "flocking" (alignement de vitesse) et de contrôle de formation (disposer les agents en cercle).</p>
-                <p><strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Théorie du contrôle, Matlab.</p>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <img src="images/projet-fiabilite.jpg" alt="Image du projet Fiabilité des Systèmes">
+                <div class="project-content">
+                    <h3>Projet de Fin d'Études : Analyse de Fiabilité des Systèmes</h3>
+                    <p><strong>Résumé :</strong> Extension d'un outil d'analyse de fiabilité pour y intégrer la gestion des systèmes complexes multi-états.</p>
+                    <div class="details">
+                        <p><strong>Objectif :</strong> L'outil existant, basé sur les diagrammes de Hasse, ne gérait que les systèmes binaires (marche/arrêt). Le but était de l'étendre pour analyser la fiabilité de systèmes plus complexes, comme une flotte de drones, pouvant avoir plusieurs niveaux de performance.</p>
+                        <p><strong>Ma solution :</strong> J'ai analysé l'architecture logicielle actuelle, proposé des améliorations pour modéliser les états multiples, puis implémenté ces modifications. J'ai ensuite utilisé l'outil amélioré pour évaluer la fiabilité et la disponibilité d'un système concret.</p>
+                        <p><strong>Compétences :</strong> Sûreté de fonctionnement, Analyse de fiabilité, Diagrammes de Hasse, Développement logiciel.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="projet-container 2a">
-        <div class="projet">
-            <img src="https://i.postimg.cc/fRH2w2zN/projet-twizzy.jpg" alt="Image du projet Twizzy">
-            <h3>Détection de Panneaux Routiers (Projet Twizzy)</h3>
-            <p><strong>Résumé :</strong> Création d'une application de vision par ordinateur pour détecter et reconnaître les panneaux de limitation de vitesse depuis un flux vidéo.</p>
-             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
-            <div class="details-projet">
-                <p><strong>Objectif :</strong> Mettre en place une chaîne de traitement d'images complète, de l'acquisition vidéo à la classification d'un objet d'intérêt.</p>
-                <p><strong>Ma solution :</strong> J'ai développé un script en Python utilisant la bibliothèque OpenCV. Le processus incluait la conversion de l'espace de couleurs (vers HSV pour la segmentation), la détection de formes géométriques (cercles) et l'extraction de caractéristiques pour la reconnaissance.</p>
-                <p><strong>Compétences :</strong> Traitement d'images, OpenCV, Python, Interface graphique.</p>
+            <div class="project-card">
+                <img src="images/projet-avion.jpg" alt="Image du projet Commande Avion">
+                <div class="project-content">
+                    <h3>Commande Automatique pour l'Atterrissage d'un Avion</h3>
+                    <p><strong>Résumé :</strong> Conception et simulation d'une loi de commande robuste pour l'atterrissage automatique d'un avion de ligne (modèle A320).</p>
+                    <div class="details">
+                        <p><strong>Objectif :</strong> Développer un pilote automatique capable de gérer la phase d'atterrissage, en respectant des contraintes de temps de réponse et de stabilité, même avec des perturbations (vent, pannes).</p>
+                        <p><strong>Ma solution :</strong> À partir d'un modèle non-linéaire, j'ai linéarisé le système autour de son point d'équilibre. J'ai ensuite conçu un observateur d'état pour reconstruire les variables non mesurées et réglé un contrôleur PID via la méthode LQR (Linear Quadratic Regulator) sous Matlab et Simulink.</p>
+                        <p><strong>Compétences :</strong> Automatique avancée, Commande de systèmes non-linéaires, Matlab, Simulink.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="projet-container 2a">
-        <div class="projet">
-            <img src="https://i.postimg.cc/k47tX4Q3/projet-labyrinthe.jpg" alt="Image du projet Labyrinthe">
-            <h3>Jeu de Labyrinthe - Conception Logicielle</h3>
-            <p><strong>Résumé :</strong> Développement en équipe d'un jeu de labyrinthe en suivant une méthodologie de gestion de projet Agile.</p>
-            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
-            <div class="details-projet">
-                <p><strong>Objectif :</strong> Appliquer les principes de l'analyse et de la conception de logiciels (UML) dans un projet de groupe, en utilisant des sprints de développement de type Scrum.</p>
-                <p><strong>Ma solution :</strong> Mon équipe et moi avons conçu le jeu en plusieurs itérations. J'ai participé à l'élaboration des diagrammes UML, au développement des fonctionnalités (déplacement, monstres) et à la validation par des tests à la fin de chaque sprint.</p>
-                <p><strong>Compétences :</strong> Conception logicielle (UML), Méthodologie Agile (Scrum), Travail d'équipe.</p>
+
+             <div class="project-card">
+                <img src="images/projet-multi-agents.jpg" alt="Image du projet Multi-Agents">
+                <div class="project-content">
+                    <h3>Pilotage de Systèmes Multi-Agents et Consensus</h3>
+                    <p><strong>Résumé :</strong> Étude et simulation des algorithmes permettant à un groupe d'agents autonomes de converger vers un état ou une formation commune.</p>
+                    <div class="details">
+                        <p><strong>Objectif :</strong> Comprendre et implémenter les principes de la théorie du consensus pour des systèmes multi-agents, un concept clé pour la robotique en essaim ou les flottes de véhicules autonomes.</p>
+                        <p><strong>Ma solution :</strong> En utilisant la théorie des graphes (matrice Laplacienne), j'ai simulé en temps continu et discret des algorithmes de consensus. J'ai également étendu l'étude à des problèmes de "flocking" (alignement de vitesse) et de contrôle de formation (disposer les agents en cercle).</p>
+                        <p><strong>Compétences :</strong> Systèmes multi-agents, Algorithmes de consensus, Théorie du contrôle, Matlab.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="projet-container 2a">
-        <div class="projet">
-            <img src="https://i.postimg.cc/sXvY9W3d/projet-trafic.jpg" alt="Image du projet Trafic Routier">
-            <h3>Simulateur de Trafic Routier en C</h3>
-            <p><strong>Résumé :</strong> Développement d'un simulateur de trafic en C, avec un focus sur la gestion de la concurrence et de la synchronisation.</p>
-             <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
-            <div class="details-projet">
-                <p><strong>Objectif :</strong> Simuler le déplacement de plusieurs véhicules sur un réseau routier sans qu'ils n'entrent en collision, en utilisant des concepts de programmation système avancés.</p>
-                <p><strong>Ma solution :</strong> J'ai d'abord créé une version séquentielle. Ensuite, j'ai développé une version concurrente où chaque véhicule et chaque feu de signalisation est un thread distinct. J'ai utilisé des mutex pour protéger l'accès aux intersections et garantir une simulation sans conflits.</p>
-                <p><strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading), Synchronisation (mutex).</p>
+
+            <div class="project-card">
+                <img src="images/projet-twizzy.jpg" alt="Image du projet Twizzy">
+                <div class="project-content">
+                    <h3>Détection de Panneaux Routiers (Projet Twizzy)</h3>
+                    <p><strong>Résumé :</strong> Création d'une application de vision par ordinateur pour détecter et reconnaître les panneaux de limitation de vitesse depuis un flux vidéo.</p>
+                     <div class="details">
+                        <p><strong>Objectif :</strong> Mettre en place une chaîne de traitement d'images complète, de l'acquisition vidéo à la classification d'un objet d'intérêt.</p>
+                        <p><strong>Ma solution :</strong> J'ai développé un script en Python utilisant la bibliothèque OpenCV. Le processus incluait la conversion de l'espace de couleurs (vers HSV pour la segmentation), la détection de formes géométriques (cercles) et l'extraction de caractéristiques pour la reconnaissance.</p>
+                        <p><strong>Compétences :</strong> Traitement d'images, OpenCV, Python, Interface graphique.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="projet-container 2a">
-        <div class="projet">
-            <img src="https://i.postimg.cc/T3N3rRw1/projet-reseau.jpg" alt="Image du projet Packet Tracer">
-            <h3>Routage et Commutation Réseau (Packet Tracer)</h3>
-            <p><strong>Résumé :</strong> Configuration d'une architecture réseau complète pour maîtriser les concepts de routage et de commutation.</p>
-            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
-            <div class="details-projet">
-                <p><strong>Objectif :</strong> Simuler un modèle réduit d'Internet pour comprendre comment les données transitent entre différents réseaux locaux.</p>
-                <p><strong>Ma solution :</strong> En utilisant le simulateur Cisco Packet Tracer, j'ai configuré les tables de routage de plusieurs routeurs, d'abord en statique, puis avec des protocoles dynamiques comme RIP et OSPF. J'ai également exploré la commutation de niveau 2 avec le protocole Spanning Tree (STP).</p>
-                <p><strong>Compétences :</strong> Réseaux informatiques, Cisco Packet Tracer, Protocoles de routage (RIP, OSPF).</p>
+
+            <div class="project-card">
+                <img src="images/projet-labyrinthe.jpg" alt="Image du projet Labyrinthe">
+                <div class="project-content">
+                    <h3>Jeu de Labyrinthe - Conception Logicielle</h3>
+                    <p><strong>Résumé :</strong> Développement en équipe d'un jeu de labyrinthe en suivant une méthodologie de gestion de projet Agile.</p>
+                    <div class="details">
+                        <p><strong>Objectif :</strong> Appliquer les principes de l'analyse et de la conception de logiciels (UML) dans un projet de groupe, en utilisant des sprints de développement de type Scrum.</p>
+                        <p><strong>Ma solution :</strong> Mon équipe et moi avons conçu le jeu en plusieurs itérations. J'ai participé à l'élaboration des diagrammes UML, au développement des fonctionnalités (déplacement, monstres) et à la validation par des tests à la fin de chaque sprint.</p>
+                        <p><strong>Compétences :</strong> Conception logicielle (UML), Méthodologie Agile (Scrum), Travail d'équipe.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="projet-container 1a">
-        <div class="projet">
-            <img src="https://i.postimg.cc/wMP2kM7d/projet-lego.jpg" alt="Image du projet Robot Lego">
-            <h3>Problème du Voyageur de Commerce avec un Robot Lego</h3>
-            <p><strong>Résumé :</strong> Application pratique d'algorithmes d'optimisation pour résoudre un problème de recherche du plus court chemin.</p>
-            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
-            <div class="details-projet">
-                <p><strong>Objectif :</strong> Dans le cadre d'un bureau d'étude, programmer un robot Lego pour qu'il visite une série de points en parcourant la distance la plus courte possible, une version physique du "problème du voyageur de commerce".</p>
-                <p><strong>Ma solution :</strong> J'ai participé à l'implémentation de différentes heuristiques d'optimisation et à la programmation du robot en C++ et Matlab pour suivre la trajectoire calculée, en intégrant des aspects de commande automatique.</p>
-                <p><strong>Compétences :</strong> Mathématiques (optimisation), Automatique, C++, Matlab.</p>
+            <div class="project-card">
+                <img src="images/projet-trafic.jpg" alt="Image du projet Trafic Routier">
+                <div class="project-content">
+                    <h3>Simulateur de Trafic Routier en C</h3>
+                    <p><strong>Résumé :</strong> Développement d'un simulateur de trafic en C, avec un focus sur la gestion de la concurrence et de la synchronisation.</p>
+                    <div class="details">
+                        <p><strong>Objectif :</strong> Simuler le déplacement de plusieurs véhicules sur un réseau routier sans qu'ils n'entrent en collision, en utilisant des concepts de programmation système avancés.</p>
+                        <p><strong>Ma solution :</strong> J'ai d'abord créé une version séquentielle. Ensuite, j'ai développé une version concurrente où chaque véhicule et chaque feu de signalisation est un thread distinct. J'ai utilisé des mutex pour protéger l'accès aux intersections et garantir une simulation sans conflits.</p>
+                        <p><strong>Compétences :</strong> Langage C, Programmation concurrente (multithreading), Synchronisation (mutex).</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="projet-container 1a">
-        <div class="projet">
-            <img src="https://i.postimg.cc/50tQGggr/projet-dijkstra.jpg" alt="Image du projet Dijkstra">
-            <h3>Calcul d'Itinéraire de Bus avec l'Algorithme de Dijkstra</h3>
-            <p><strong>Résumé :</strong> Développement d'une application en Java pour calculer le trajet optimal dans un réseau de transport.</p>
-            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
-            <div class="details-projet">
-                <p><strong>Objectif :</strong> Appliquer un algorithme de théorie des graphes classique à un problème concret.</p>
-                <p><strong>Ma solution :</strong> J'ai modélisé le réseau de bus sous forme de graphe pondéré, où les arrêts sont les sommets et les temps de trajet sont les poids des arêtes. J'ai ensuite implémenté l'algorithme de Dijkstra pour trouver le plus court chemin entre deux arrêts choisis par l'utilisateur via une interface graphique.</p>
-                <p><strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données, Interface graphique.</p>
+            <div class="project-card">
+                <img src="images/projet-reseau.jpg" alt="Image du projet Packet Tracer">
+                <div class="project-content">
+                    <h3>Routage et Commutation Réseau (Packet Tracer)</h3>
+                    <p><strong>Résumé :</strong> Configuration d'une architecture réseau complète pour maîtriser les concepts de routage et de commutation.</p>
+                     <div class="details">
+                        <p><strong>Objectif :</strong> Simuler un modèle réduit d'Internet pour comprendre comment les données transitent entre différents réseaux locaux.</p>
+                        <p><strong>Ma solution :</strong> En utilisant le simulateur Cisco Packet Tracer, j'ai configuré les tables de routage de plusieurs routeurs, d'abord en statique, puis avec des protocoles dynamiques comme RIP et OSPF. J'ai également exploré la commutation de niveau 2 avec le protocole Spanning Tree (STP).</p>
+                        <p><strong>Compétences :</strong> Réseaux informatiques, Cisco Packet Tracer, Protocoles de routage (RIP, OSPF).</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="projet-container 1a">
-        <div class="projet">
-            <img src="https://i.postimg.cc/W3tChBjg/projet-sql.jpg" alt="Image du projet Base de Données">
-            <h3>Modélisation et Interrogation d'une Base de Données</h3>
-            <p><strong>Résumé :</strong> Conception et manipulation d'une base de données relationnelle pour la gestion d'employés.</p>
-            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
-            <div class="details-projet">
-                <p><strong>Objectif :</strong> Maîtriser le cycle de vie d'une base de données, de la conception à l'interrogation complexe.</p>
-                <p><strong>Ma solution :</strong> En partant d'un cahier des charges, j'ai élaboré un modèle UML puis un schéma relationnel. J'ai ensuite créé la base avec MySQL Workbench et écrit une série de requêtes SQL complexes pour extraire des informations spécifiques (salaires, managers, etc.).</p>
-                <p><strong>Compétences :</strong> SQL, Modélisation de données (UML), MySQL Workbench.</p>
+             <div class="project-card">
+                <img src="images/projet-lego.jpg" alt="Image du projet Robot Lego">
+                <div class="project-content">
+                    <h3>Problème du Voyageur de Commerce avec un Robot Lego</h3>
+                    <p><strong>Résumé :</strong> Application pratique d'algorithmes d'optimisation pour résoudre un problème de recherche du plus court chemin.</p>
+                     <div class="details">
+                        <p><strong>Objectif :</strong> Dans le cadre d'un bureau d'étude, programmer un robot Lego pour qu'il visite une série de points en parcourant la distance la plus courte possible, une version physique du "problème du voyageur de commerce".</p>
+                        <p><strong>Ma solution :</strong> J'ai participé à l'implémentation de différentes heuristiques d'optimisation et à la programmation du robot en C++ et Matlab pour suivre la trajectoire calculée, en intégrant des aspects de commande automatique.</p>
+                        <p><strong>Compétences :</strong> Mathématiques (optimisation), Automatique, C++, Matlab.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="projet-container 1a">
-        <div class="projet">
-            <img src="https://i.postimg.cc/L5nPCQxX/projet-balance.jpg" alt="Image du projet Algorithme Force Brute">
-            <h3>Équilibrage d'une Balance - Algorithme Force Brute</h3>
-            <p><strong>Résumé :</strong> Exploration d'une solution algorithmique pour un problème combinatoire et analyse de sa performance.</p>
-            <button class="btn-details" onclick="toggleDetails(this)">Voir plus</button>
-            <div class="details-projet">
-                <p><strong>Objectif :</strong> Résoudre le problème de l'équilibrage d'une balance à n plateaux avec k poids, et comprendre les limites des algorithmes exhaustifs.</p>
-                <p><strong>Ma solution :</strong> J'ai implémenté un algorithme en Python qui teste toutes les combinaisons possibles (approche par "force brute") pour trouver les solutions. J'ai ensuite analysé sa complexité algorithmique pour montrer son caractère exponentiel et son inefficacité pour de grands nombres de poids.</p>
-                <p><strong>Compétences :</strong> Algorithmique, Analyse de complexité, Python.</p>
+
+             <div class="project-card">
+                <img src="images/projet-dijkstra.jpg" alt="Image du projet Dijkstra">
+                <div class="project-content">
+                    <h3>Calcul d'Itinéraire de Bus avec l'Algorithme de Dijkstra</h3>
+                    <p><strong>Résumé :</strong> Développement d'une application en Java pour calculer le trajet optimal dans un réseau de transport.</p>
+                     <div class="details">
+                        <p><strong>Objectif :</strong> Appliquer un algorithme de théorie des graphes classique à un problème concret.</p>
+                        <p><strong>Ma solution :</strong> J'ai modélisé le réseau de bus sous forme de graphe pondéré, où les arrêts sont les sommets et les temps de trajet sont les poids des arêtes. J'ai ensuite implémenté l'algorithme de Dijkstra pour trouver le plus court chemin entre deux arrêts choisis par l'utilisateur via une interface graphique.</p>
+                        <p><strong>Compétences :</strong> Java, Algorithmique (Dijkstra), Structures de données, Interface graphique.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-  </div>
 
-  <script>
-    // Gère le clic sur le bouton "Voir plus"
-    function toggleDetails(button) {
-      const details = button.nextElementSibling;
-      if (details.style.maxHeight) {
-        details.style.maxHeight = null;
-        button.textContent = 'Voir plus';
-      } else {
-        details.style.maxHeight = details.scrollHeight + 'px';
-        button.textContent = 'Voir moins';
-      }
-    }
+            <div class="project-card">
+                <img src="images/projet-sql.jpg" alt="Image du projet Base de Données">
+                <div class="project-content">
+                    <h3>Modélisation et Interrogation d'une Base de Données</h3>
+                    <p><strong>Résumé :</strong> Conception et manipulation d'une base de données relationnelle pour la gestion d'employés.</p>
+                     <div class="details">
+                        <p><strong>Objectif :</strong> Maîtriser le cycle de vie d'une base de données, de la conception à l'interrogation complexe.</p>
+                        <p><strong>Ma solution :</strong> En partant d'un cahier des charges, j'ai élaboré un modèle UML puis un schéma relationnel. J'ai ensuite créé la base avec MySQL Workbench et écrit une série de requêtes SQL complexes pour extraire des informations spécifiques (salaires, managers, etc.).</p>
+                        <p><strong>Compétences :</strong> SQL, Modélisation de données (UML), MySQL Workbench.</p>
+                    </div>
+                </div>
+            </div>
 
-    // Gère le filtrage par année et par recherche
-    function filterAndSearch() {
-        const anneeSelectionnee = document.querySelector('.filtres button.actif').getAttribute('onclick').split("'")[1];
-        const termeRecherche = document.getElementById('recherche').value.toLowerCase();
-        const projets = document.querySelectorAll('.projet-container');
+             <div class="project-card">
+                <img src="images/projet-balance.jpg" alt="Image du projet Algorithme Force Brute">
+                <div class="project-content">
+                    <h3>Équilibrage d'une Balance - Algorithme Force Brute</h3>
+                    <p><strong>Résumé :</strong> Exploration d'une solution algorithmique pour un problème combinatoire et analyse de sa performance.</p>
+                     <div class="details">
+                        <p><strong>Objectif :</strong> Résoudre le problème de l'équilibrage d'une balance à n plateaux avec k poids, et comprendre les limites des algorithmes exhaustifs.</p>
+                        <p><strong>Ma solution :</strong> J'ai implémenté un algorithme en Python qui teste toutes les combinaisons possibles (approche par "force brute") pour trouver les solutions. J'ai ensuite analysé sa complexité algorithmique pour montrer son caractère exponentiel et son inefficacité pour de grands nombres de poids.</p>
+                        <p><strong>Compétences :</strong> Algorithmique, Analyse de complexité, Python.</p>
+                    </div>
+                </div>
+            </div>
 
-        projets.forEach(projet => {
-            const estDansAnnee = anneeSelectionnee === 'tous' || projet.classList.contains(anneeSelectionnee);
-            const texteProjet = projet.textContent || projet.innerText;
-            const correspondRecherche = texteProjet.toLowerCase().includes(termeRecherche);
-
-            if (estDansAnnee && correspondRecherche) {
-                projet.style.display = 'block';
-            } else {
-                projet.style.display = 'none';
-            }
-        });
-    }
-
-    // Gère le filtrage par année
-    function filtrerProjets(annee) {
-      const boutons = document.querySelectorAll('.filtres button');
-      boutons.forEach(bouton => {
-          bouton.classList.remove('actif');
-          const anneeBouton = bouton.getAttribute('onclick').split("'")[1];
-          if (anneeBouton === annee) {
-              bouton.classList.add('actif');
-          }
-      });
-      filterAndSearch();
-    }
-
-    // Gère la recherche par mot-clé
-    function rechercherProjet() {
-        filterAndSearch();
-    }
-  </script>
-
-</body>
+            </div> </div> </body>
 </html>
